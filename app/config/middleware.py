@@ -74,7 +74,8 @@ class RequestLoggingMiddleware(BaseHTTPMiddleware):
             duration_ms = (time.perf_counter() - start) * 1000
 
             # ── 5. Emit structured access log ──
-            logger.info(
+            log = logger.info if response.status_code < 400 else logger.warning
+            log(
                 "http_request_completed",
                 status_code=response.status_code,
                 duration_ms=round(duration_ms, 2),
