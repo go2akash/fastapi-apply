@@ -36,8 +36,8 @@ def chat_stream(
 
 @router.get("/chat/history")
 def chat_history(
-    limit: int,
-    offset: int,
+    limit: int = 10,
+    offset: int = 0,
     service: ChatService = Depends(get_chat_service),
     current_user: Users = Depends(get_current_user),
 ):

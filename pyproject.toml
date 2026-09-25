@@ -21,6 +21,8 @@ dependencies = [
   "pyjwt>=2.14.0",
   "structlog>=26.1.0",
   "openai>=3.14.1",
+  "psycopg2-binary>=2.9.13",
+  "slowapi>=0.1.10",
 ]
 
 
